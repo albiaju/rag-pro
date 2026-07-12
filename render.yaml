@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: albi-chatbot
+    env: docker
+    plan: free
+    dockerfilePath: Dockerfile
+    buildCommand: ''
+    startCommand: ''
+    envVars:
+      - key: PORT
+        value: '8501'
+      - key: OPENSEARCH_HOST
+        value: 'localhost'
+      - key: OPENSEARCH_PORT
+        value: '9200'
+      - key: OLLAMA_ADDRESS
+        value: 'http://localhost:11434'
+      - key: OLLAMA_MODEL_NAME
+        value: 'llama3.2:1b'
